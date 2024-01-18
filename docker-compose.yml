@@ -40,12 +40,12 @@ services:
       - ./docker/mysql/dump:/docker-entrypoint-initdb.d
     networks:
       - moisklad_global
-  
+
   nginx:
     image: nginx:alpine
     #    restart: unless-stopped
     ports:
-      - "80:80"
+      - "8084:80"
     volumes:
       - ./:/var/www
       - ./docker/nginx:/etc/nginx/conf.d
