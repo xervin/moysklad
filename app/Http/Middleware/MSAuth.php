@@ -16,7 +16,7 @@ class MSAuth
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if ($request->route()->getName() !== 'login' && !User::isAuth()) {
+        if (!User::isAuth()) {
             return redirect()->route('login');
         }
 

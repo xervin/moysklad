@@ -19,9 +19,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['MSAuth'])->group(function() {
     Route::get('/', [\App\Http\Controllers\IndexController::class, 'index'])->name('index');
     Route::post('state/{uid}/change/{value}', [\App\Http\Controllers\StateController::class, 'changeState']);
-    Route::post('login', [\App\Http\Controllers\MSLoginController::class, 'auth'])->name('login.auth');
-    Route::get('login', [\App\Http\Controllers\MSLoginController::class, 'index'])->name('login');
-    Route::get('logout', [\App\Http\Controllers\MSLoginController::class, 'logout'])->name('logout');
 });
 
-
+Route::post('login', [\App\Http\Controllers\MSLoginController::class, 'auth'])->name('login.auth');
+Route::get('login', [\App\Http\Controllers\MSLoginController::class, 'index'])->name('login');
+Route::get('logout', [\App\Http\Controllers\MSLoginController::class, 'logout'])->name('logout');
